@@ -4,8 +4,8 @@ This job schedules itself via cron and periodically cleans up a local (=same hos
 - [registry garbage collect](https://docs.docker.com/registry/garbage-collection/)
 
 ## Requirements
-- Registry must have delete enabled (see [docker-compose.yml])
-- Mounting the docker registry's data volume (see [docker-compose.yml])
+- Registry must have delete enabled see (docker-compose.yml)
+- Mounting the docker registry's data volume (docker-compose.yml)
 - If custom registry data location is used, the location must also be configured for the cleaner
 
 ## Usage via docker

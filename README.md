@@ -14,4 +14,4 @@ docker run -d -v<VOLUME_NAME>:/var/lib/registry kamalook/docker-registry-cleaner
 ```
 
 ## Usage via compose or swarm
-Have a look at the supplied [docker-compose.yml].
+Have a look at the supplied [docker-compose.yml](docker-compose.yml).

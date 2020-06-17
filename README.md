@@ -1,5 +1,5 @@
-# Cleanup tool for docker registry
-This tool schedules itself via cron and periodically cleans up a local (=same host) docker registry via
+# Cleanup job for docker registry
+This job schedules itself via cron and periodically cleans up a local (=same host) docker registry via
 - [registry-cli](https://github.com/andrey-pohilko/registry-cli)
 - [registry garbage collect](https://docs.docker.com/registry/garbage-collection/)
 

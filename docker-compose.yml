@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  registry:
+    image: registry:2
+    environment:
+      - REGISTRY_STORAGE_DELETE_ENABLED=true
+    ports:
+      - 5000:5000
+    volumes:
+      - data:/var/lib/registry
+  cleaner:
+    build: .
+    image: kamalook/docker-registry-cleaner
+    environment: 
+      - DOCKER_REGISTRY_URL=http://registry:5000
+    volumes:
+      - data:/var/lib/registry
+
+volumes:
+  data:

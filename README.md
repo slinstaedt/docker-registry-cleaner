@@ -7,7 +7,8 @@ Per default this job tries to delete images in the registry which:
 - releases (start with a number) which are older than *KEEP_BY_HOURS*, up until *KEEP_RELEASES_NUM* are left
 - snapshots (start not with a number) which are older than *KEEP_BY_HOURS*
 - never delete *KEEP_TAGS*
-So if no new images have been pushed for longer time, the registry will *latest* tag and up to 10 released tags in the form of e.g. *IMAGE:1* or *IMAGE:1.2.3*.
+
+So if no new images have been pushed for longer time, the registry will *latest* tag and up to *KEEP_RELEASES_NUM* released tags in the form of e.g. *IMAGE:1* or *IMAGE:1.2.3*.
 
 ## Requirements
 - Cleaner only works for docker registry version 2

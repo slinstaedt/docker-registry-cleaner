@@ -3,6 +3,12 @@ This job schedules itself via cron and periodically cleans up a local (=same hos
 - [registry-cli](https://github.com/andrey-pohilko/registry-cli)
 - [registry garbage collect](https://docs.docker.com/registry/garbage-collection/)
 
+Per default this job tries to delete images in the registry which:
+- releases (start with a number) which are older than *KEEP_BY_HOURS*, up until *KEEP_RELEASES_NUM* are left
+- snapshots (start not with a number) which are older than *KEEP_BY_HOURS*
+- never delete *KEEP_TAGS*
+So if no new images have been pushed for longer time, the registry will *latest* tag and up to 10 released tags in the form of e.g. *IMAGE:1* or *IMAGE:1.2.3*.
+
 ## Requirements
 - Cleaner only works for docker registry version 2
 - Registry must have delete enabled (see [docker-compose.yml](docker-compose.yml))
@@ -11,7 +17,7 @@ This job schedules itself via cron and periodically cleans up a local (=same hos
 
 ## Configuration
 The following environment variables are used:
-| Name                      | default   | Description                                                    |
+| Name                      | Default   | Description                                                    |
 |---------------------------|-----------|----------------------------------------------------------------|
 | DOCKER_REGISTRY_URL       |           | URL of the docker registry (required)                          |
 | DOCKER_REGISTRY_USER_PASS |           | "username:password" of docker registry, if it's protected      |

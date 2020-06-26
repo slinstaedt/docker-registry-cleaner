@@ -6,7 +6,7 @@ cat > $SCRIPT << EOF
 #!/bin/sh
 set -euo pipefail
 
-echo "=== Cleanup Releaes ==="
+echo "=== Cleanup Releases ==="
 registry-cli.py $OPTS \
 	${DOCKER_REGISTRY_USER_PASS:+-l $DOCKER_REGISTRY_USER_PASS} \
 	-r ${DOCKER_REGISTRY_URL:?err} \
